@@ -18,6 +18,14 @@ use App\Models\Listing;
 
 // All Listings
 Route::get('/', [ListingController::class, 'index']);
+
+// Show Create Form
+Route::get('/listing/create', [ListingController::class, 'create']);
+
+// Store Listing data
+Route::post('/listings', [ListingController::class, 'store']);
+
+// Show Single Listing
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
 
 // // Custom Headers
