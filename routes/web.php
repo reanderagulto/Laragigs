@@ -14,19 +14,6 @@ use App\Models\Listing;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
-// All Listings
-Route::get('/', [ListingController::class, 'index']);
-
-// Show Create Form
-Route::get('/listing/create', [ListingController::class, 'create']);
-
-// Store Listing data
-Route::post('/listings', [ListingController::class, 'store']);
-
-// Show Single Listing
-Route::get('/listing/{listing}', [ListingController::class, 'show']);
 
 // // Custom Headers
 // Route::get('/hello', function() {
@@ -44,3 +31,28 @@ Route::get('/listing/{listing}', [ListingController::class, 'show']);
 // Route::get('/search', function(Request $request){    
 //     return $request->name . ' ' . $request->city;
 // });
+*/
+
+// All Listings
+Route::get('/', [ListingController::class, 'index']);
+
+// Show Create Form
+Route::get('/listing/create', [ListingController::class, 'create']);
+
+// Store Listing data
+Route::post('/listings', [ListingController::class, 'store']);
+
+// Show Edit Form
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// Update Edit Form
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'delete']);
+
+// Show Single Listing
+Route::get('/listing/{listing}', [ListingController::class, 'show']);
+
+// Show Register/Create Form\
+Route::get('/register', [UserController::Class, 'create']);
